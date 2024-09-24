@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Search</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="Search employees..." id="searchInput">
+            <button class="filter-btn" onclick="toggleFilters()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18M3 12h18M3 21h18" />
+                </svg>
+                Filters
+            </button>
+        </div>
+        <div class="filters" id="filters" style="display:none; max-height: 0; opacity: 0; transition: max-height 0.3s ease, opacity 0.3s ease;">
+            <h2>Filters</h2>
+            <div class="filter-option">
+                <label for="hoursSpent">Hours Spent:</label>
+                <input type="number" id="hoursSpent" placeholder="e.g. 40">
+            </div>
+            <div class="filter-option">
+                <label for="pastExperience">Past Experience:</label>
+                <input type="text" id="pastExperience" placeholder="e.g. Developer">
+            </div>
+            <div class="filter-option">
+                <label for="previousJobs">Number of Previous Jobs:</label>
+                <input type="number" id="previousJobs" placeholder="e.g. 3">
+            </div>
+            <div class="filter-option">
+                <label for="skills">Skills:</label>
+                <input type="text" id="skills" placeholder="e.g. JavaScript, Python">
+            </div>
+            <div class="filter-option">
+                <label for="ageRange">Age Range:</label>
+                <input type="number" id="ageMin" placeholder="Min Age">
+                <input type="number" id="ageMax" placeholder="Max Age">
+            </div>
+            <div class="filter-option">
+                <label for="qualification">Qualification:</label>
+                <input type="text" id="qualification" placeholder="e.g. Bachelor's, Master's">
+            </div>
+        </div>
+        <button id="applyFilters" onclick="applyFilters()">Apply Filters</button>
+        <div id="results"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
