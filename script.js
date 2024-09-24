@@ -48,7 +48,20 @@ function applyFilters() {
     const ageMax = parseInt(document.getElementById('ageMax').value) || Infinity;
     const qualification = document.getElementById('qualification').value.toLowerCase().trim();
 
-
+    // If no filters are applied (i.e., all inputs are default/empty)
+    if (
+        hoursSpent === 0 &&
+        !pastExperience &&
+        previousJobs === 0 &&
+        skills.length === 0 &&
+        ageMin === 0 &&
+        ageMax === Infinity &&
+        !qualification
+    ) {
+        // Display "No candidates found" and return
+        displayResults([]);
+        return;
+    }
 
     // Filter candidates based on provided inputs
     const filteredData = candidates.filter(candidate => {
